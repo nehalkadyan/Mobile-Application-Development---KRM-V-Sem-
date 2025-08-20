@@ -1,14 +1,60 @@
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { useRouter } from "expo-router";
+import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
+  const router = useRouter();
+
+  const array = [
+    {
+      id: 1,
+      firstName: "Rohan",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "Sohan",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "Harris",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "James",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "Rohan",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "Sohan",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "Harris",
+      gender: "male",
+      age: 20,
+    },
+    {
+      id: 1,
+      firstName: "James",
+      gender: "male",
+      age: 20,
+    },
+  ];
+
   return (
     // <SafeAreaView style={styles.container}>
     //   <Text style={styles.heading}>This is my App!</Text>
@@ -50,100 +96,44 @@ export default function Index() {
     // </SafeAreaView>
 
     <SafeAreaView style={{ padding: 10 }}>
-      <TextInput
-        placeholderTextColor="gray"
-        placeholder="Serach for restaurant, item or more..."
-        style={styles.searchBox}
-      ></TextInput>
+      {/* <Text style={{ fontWeight: "bold", fontSize: 20 }}>FlatList Element</Text> */}
 
-      <View style={styles.imgContainer}>
-        <Image
-          style={{ height: 200, width: "100%", borderRadius: 10 }}
-          source={{
-            uri: "https://images.unsplash.com/photo-1635526910370-6881e1756fee?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          }}
-        ></Image>
-      </View>
-
-      <View style={{ padding: 10 }}>
-        <Text style={styles.subtitle}>What's on your mind?</Text>
-
-        <ScrollView horizontal style = {{paddingTop: 10, marginLeft: -10}}>
-          <View style={styles.itemContainer}>
-            <View>
-              <Image
-                style={styles.itemImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=810&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-              ></Image>
-            </View>
-
-            <View>
-              <Text style = {styles.itemName}>Biryani</Text>
-            </View>
+      <View style={{ alignItems: "center" }}>
+        {/* <FlatList
+        numColumns={3}
+        data={array}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style = {{width: 100, padding: 10, borderColor : "black", borderWidth: 1, margin: 20, borderRadius : 15}}>
+            <Text>{item.firstName}</Text>
+            <Text>{item.gender}</Text>
+            <Text>{item.age}</Text>
           </View>
+        )}
+      /> */}
 
-          <View style={styles.itemContainer}>
-            <View>
-              <Image
-                style={styles.itemImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-              ></Image>
-            </View>
+        {/* Stack Navigation,   Tab Navigation */}
 
-            <View>
-              <Text  style = {styles.itemName}>Dessert</Text>
-            </View>
-          </View>
+        <Text>Home Page</Text>
 
-          <View style={styles.itemContainer}>
-            <View>
-              <Image
-                style={styles.itemImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-              ></Image>
-            </View>
-
-            <View>
-              <Text  style = {styles.itemName}>Dessert</Text>
-            </View>
-          </View>
-
-          <View style={styles.itemContainer}>
-            <View>
-              <Image
-                style={styles.itemImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-              ></Image>
-            </View>
-
-            <View>
-              <Text  style = {styles.itemName}>Dessert</Text>
-            </View>
-          </View>
-
-          <View style={styles.itemContainer}>
-            <View>
-              <Image
-                style={styles.itemImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-              ></Image>
-            </View>
-
-            <View>
-              <Text  style = {styles.itemName}>Dessert</Text>
-            </View>
-          </View>
-        </ScrollView>
+        <Button
+          title="Go to Profile Page"
+          onPress={() =>
+            router.push({
+              pathname: "/screens/Profile",
+              params: { universityName: "KRM" },
+            })
+          }
+        ></Button>
+        <Button
+          title="Go to Search Page"
+          onPress={() =>
+            router.push({
+              pathname: "/screens/Search",
+              params: { location: "Gurgaon" },
+            })
+          }
+        ></Button>
       </View>
     </SafeAreaView>
   );
@@ -196,7 +186,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 
-  itemName : {
-    fontSize : 14
-  }
+  itemName: {
+    fontSize: 14,
+  },
 });
