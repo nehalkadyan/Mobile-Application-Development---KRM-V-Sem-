@@ -1,6 +1,6 @@
-import { View, Text, Button } from "react-native";
-import React from "react";
 import { useRouter } from "expo-router";
+import React from "react";
+import { Button, Text, View } from "react-native";
 
 const profile = () => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const profile = () => {
 
       <Button
         title="Go to New Page"
-        onPress={() => router.push("screens/new")}
+        onPress={() => router.push("/(app)/(tabs)/profile/screens/new")}
       ></Button>
     </View>
   );
